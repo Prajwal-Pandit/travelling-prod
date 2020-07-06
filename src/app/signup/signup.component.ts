@@ -75,9 +75,11 @@ export class SignupComponent implements OnInit {
 
       this.backendAPI.limitedUserSignup(formvalue.value).subscribe((resData: any) => {
         this.spinner.hide();
+        alert("Successfully Signed Up")
         this.route.navigate(['login']);
       }, error => {
-        this.spinner.hide();
+          this.spinner.hide();
+          alert("Try Again")
       });
     }
     formvalue.reset;
